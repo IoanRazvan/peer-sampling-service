@@ -1,6 +1,6 @@
 NPROC=50
 compile:
-	mpic++ -o sampling-service main.cpp SamplingService.cpp View.cpp
+	mpic++ -o sampling-service src/main.cpp src/SamplingService.cpp src/View.cpp -Iinclude
 run: compile
 	mpirun -np $(NPROC) --oversubscribe ./sampling-service
 clean:
